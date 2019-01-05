@@ -13,14 +13,13 @@ package WorkBook;
  */
 
 import java.util.Scanner;
-public class G01_categorizeWaterTemp {
+public class G02_categorizeWaterTemp {
 	public static void main (String[] args) {
 		double input_degree;
 		double degree[] = new double[10];
 		String degree_name[] = {"냉수", "미온수", "온수", "끓는 물"};	// 물 종류 
 		int count[] = {0, 0, 0, 0};	// 각 종류별 횟수 기록 
 		int i;
-		int sel; // 온도 판정 번호 
 		Scanner s1 = new Scanner(System.in);
 		
 		for (i=0 ; i<10 ; i++) {
@@ -28,8 +27,36 @@ public class G01_categorizeWaterTemp {
 			input_degree = s1.nextDouble();
 			
 			degree[i] = input_degree;
-			
-			// 아직 미완성
 		}
+		
+		for (i=0 ; i<10 ; i++) {
+			if (degree[i]<0){
+				System.out.println("잘못된 입력입니다.");
+				System.exit(0);
+			}
+			else if(degree[i] < 25) {
+				System.out.println(i+1 + "번 물의 온도는 "+ degree[i] + "입니다. " + degree_name[0]);
+				count[0]++;
+			}
+			else if (degree[i] < 40) {
+				System.out.println(i+1 + "번 물의 온도는 "+ degree[i] + "입니다. " + degree_name[1]);
+				count[1]++;
+			}
+			else if (degree[i] < 80) {
+				System.out.println(i+1 + "번 물의 온도는 "+ degree[i] + "입니다. " + degree_name[2]);
+				count[2]++;
+			}
+			else{
+				System.out.println(i+1 + "번 물의 온도는 "+ degree[i] + "입니다. " + degree_name[3]);
+				count[3]++;
+			}
+		}
+		
+		s1.close();
+		
+		System.out.println("냉수 입력 횟수: " + count[0]);
+		System.out.println("미온수 입력 횟수: " + count[1]);
+		System.out.println("온수 입력 횟수: " + count[2]);
+		System.out.println("끓는 물 입력 횟수: " + count[3]);
 	}
 }
