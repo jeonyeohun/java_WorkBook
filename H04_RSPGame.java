@@ -18,7 +18,6 @@ public class H04_RSPGame {
 		int com_finger;		// 컴퓨터의 선택 
 		int my_finger;		// 사용자의 선택 
 		int score[][] = new int[2][3];	// [컴퓨터의 승, 무, 패][사용자의 승, 무, 패]
-		int i, j;
 		Scanner s1 = new Scanner(System.in);
 		Random rand = new Random();
 		
@@ -99,5 +98,7 @@ public class H04_RSPGame {
 		// 전적 출력
 		System.out.println("컴퓨터 : 이긴 횟수는 "+ score[0][0] + "회, 진 횟수 "+ score[0][2] + "회, 비긴 횟수는 " + score[0][1] + "회 입니다.");
 		System.out.println("사용자 : 이긴 횟수는 "+ score[1][0] + "회, 진 횟수 "+ score[1][2] + "회, 비긴 횟수는 " + score[1][1] + "회 입니다.");
+		
+		s1.close();
 	}
 }
