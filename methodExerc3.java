@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class methodExerc3 {
+	Scanner s = new Scanner(System.in);
 	int GetScore() {	// 반환형이 있는 메소드 
-		Scanner s = new Scanner(System.in);
 		while(true) {
 			System.out.print("점수를 입력하시오. (0~100) :");
 			int num = s. nextInt();
@@ -14,6 +14,7 @@ public class methodExerc3 {
 			}
 			System.out.println("잘못된 범위의 수입니다.");	// 리턴이 안되면 에러메세지 이후에 반복문 다시 반복
 		}
+		
 	}
 	
 	public static void main (String[] args) {
@@ -31,4 +32,5 @@ public class methodExerc3 {
 		double average = sum / 3.0;
 		System.out.println("과목의 총점은 "+ sum + ", 평균은 " + average + "입니다.");
 	}
+	
 }
