@@ -1,7 +1,7 @@
 package WorkBook;
 
 import java.util.Random;
-public class methodExerc2 {
+public class I00_methodExerc2 {
 	void print_header(char ch) {
 		for (int i=0 ; i<17 ; i++) {
 			System.out.print(ch);
@@ -23,7 +23,7 @@ public class methodExerc2 {
 			lotto[i] = r.nextInt(45) + 1;
 		}
 		
-		methodExerc2 obj = new methodExerc2();
+		I00_methodExerc2 obj = new I00_methodExerc2();
 		obj.print_header('=');	// 매개변수로 문자 하나 전달 
 		
 		for (int i=0 ; i<lotto.length ; i++) {

@@ -2,7 +2,7 @@ package WorkBook;
 
 import java.util.Random;
 
-public class methodExerc {
+public class I00_methodExerc {
 	void print_header() {	// 매개변수, 리턴값이 없는 메소
 		System.out.println("=======================");
 		System.out.println("생성된 로또 번호");
@@ -17,7 +17,7 @@ public class methodExerc {
 			lotto[i] = r.nextInt(45)+1;
 		}
 		
-		methodExerc obj = new methodExerc();	//객체화, 인스턴스 생성 
+		I00_methodExerc obj = new I00_methodExerc();	//객체화, 인스턴스 생성 
 		obj.print_header(); // 메소드 호출
 		
 		for (int i = 0 ;i< lotto.length ; i++) {
