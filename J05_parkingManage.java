@@ -70,7 +70,7 @@ public class J05_parkingManage {
 			}
 		}
 		
-		System.out.println("주차차량 "+ (cnt) + "대의 총 주차요금은 " + total_price + "원 입니다.");
+		System.out.println("주차차량 "+ cnt + "대의 총 주차요금은 " + total_price + "원 입니다.");
 		s.close();
 	}
 }
