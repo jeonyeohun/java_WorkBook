@@ -1,9 +1,9 @@
 package WorkBook;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class I00_methodExerc3 {
+	@SuppressWarnings("resource")
 	int GetScore() {	// 반환형이 있는 메소드 
 		while(true) {
 			Scanner s = new Scanner(System.in);
