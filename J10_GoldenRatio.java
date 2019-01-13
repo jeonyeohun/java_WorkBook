@@ -26,13 +26,18 @@ public class J10_GoldenRatio {
 			J10_GoldenRatio obj = new J10_GoldenRatio();
 			
 			while(true) {
+				// 이전 황금비율 결과를 저장
 				PGr = GR;
+				// 새로운 황금 비율 계산 
 				GR = Math.round((double) (obj.fibonacci(n+1)) / (double) (obj.fibonacci(n)) *1000000)/1000000.0;
 				
+				System.out.println(n + "번째 비율 (" + obj.fibonacci(n+1) + "/" + obj.fibonacci(n) + ") : " + GR);
+				
+				// 이전 황금비율과 현재황금비율의 차가 1000000 분의 1 이상이라면 반복 종료.
 				if (Math.abs(GR-PGr) <= Math.round(1/1000000 * 1000000)/1000000.0) {
 					break;
 				}
-				System.out.println(n + "번째 비율 (" + obj.fibonacci(n) + "/" + obj.fibonacci(n-1) + ") : " + GR);
+				
 				n++;
 				
 			}
