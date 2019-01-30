@@ -15,6 +15,9 @@ import java.text.SimpleDateFormat;
 class parking {
 	String num, name;
 	String today;
+	int flag = 0; // 공간이 비어있는지 차있는지 확인
+	
+	//생성자, 새로운 차량이 추가될 때 할 행동//
 	public parking(String num, String name, int i) {
 		this.num = num;
 		this.name = name;
@@ -22,27 +25,37 @@ class parking {
 		SimpleDateFormat f = new SimpleDateFormat("YYYY년 MM월 DD일 HH시 mm분", Locale.KOREA);
 		this.today = f.format(new Date());
 		System.out.println("["+(i+1)+"번] " + today + "입차 되었습니다.");
+		this.flag=1;
 	}
 	
+	//차량 및 주차시간 정보 출력//
 	void print(int i) {
 		SimpleDateFormat f = new SimpleDateFormat("YYYY-MM-DD HH:mm", Locale.KOREA);
 		this.today = f.format(new Date());
 		System.out.println("["+(i+1)+"번] \t"+ num + " \t" + name + " \t" + today);
 	}
+	
+	int isEmpty () {
+		if (flag==1) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
 }
 
 public class L02_parkingInfo {
-	
-	void showlist(ArrayList<parking> p) {
-		
+	// 현재 주차되어있는 차량의 정보 출력 //
+	void showlist(ArrayList<parking> p) {	
 		int size = p.size();
-		
 		if(size<=0) {
 			System.out.println("주차된 차량이 없습니다.");
-		}
-		else {
+		}else {
 			for(int i=0 ; i<p.size() ; i++) {
-				p.get(i).print(i);
+				if((p.get(i).isEmpty()) == 1) {
+					p.get(i).print(i);
+				}
 			}
 		}
 	}
@@ -91,6 +104,7 @@ public class L02_parkingInfo {
 			}
 			else if(op == 4) {
 				System.out.println("총 "+size+"대가 주차되어 있습니다.");
+				obj.showlist(p);
 			}
 			else if(op == 5) {
 				System.out.println("주차 가능한 자리는 "+(parklimit-size)+"대입니.");
