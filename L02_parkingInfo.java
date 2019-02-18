@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 class parking {
 	String num, name;
 	String today;
+	Date time;
 	int flag = 0; // 공간이 비어있는지 차있는지 확인
 	
 	//생성자, 새로운 차량이 추가될 때 할 행동//
@@ -24,8 +25,10 @@ class parking {
 		
 		SimpleDateFormat f = new SimpleDateFormat("YYYY년 MM월 DD일 HH시 mm분", Locale.KOREA);
 		this.today = f.format(new Date());
+		this.time = f.parse(this.today); // 날짜 계산하는 법을 잘 모르겠다..
+		
 		System.out.println("["+(i+1)+"번] " + today + "입차 되었습니다.");
-		this.flag=1;
+		t cxhis.flag=1;
 	}
 	
 	//차량 및 주차시간 정보 출력//
@@ -35,6 +38,14 @@ class parking {
 		System.out.println("["+(i+1)+"번] \t"+ num + " \t" + name + " \t" + today);
 	}
 	
+	void remove() {
+		int price;
+		String 
+		SimpleDateFormat f = new SimpleDateFormat("YYYY-MM-DD HH:mm", Locale.KOREA);
+		
+	}
+	
+	// 차량이 주차되어 있는지 확인하고 결과값 리턴
 	int isEmpty () {
 		if (flag==1) {
 			return 1;
@@ -97,6 +108,8 @@ public class L02_parkingInfo {
 				}
 			}
 			else if(op == 2) {
+				System.out.print("==>출차 번호를 입력하세요: ");
+				i = s.nextInt();
 			}
 			else if(op == 3) {
 				obj.showlist(p);
